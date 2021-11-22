@@ -1,1 +1,1 @@
-Source: https://github.com/batleforc/hadoop-docker
+Source: https://github.com/big-data-europe/docker-hadoop
