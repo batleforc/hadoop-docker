@@ -10,7 +10,6 @@ services:
       - 9000:9000
     volumes:
       - ./data/namenode:/hadoop/dfs/name
-      - ./data/nameapp:/app
     environment:
       - CLUSTER_NAME=test
     env_file:
@@ -40,6 +39,8 @@ services:
     image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
     container_name: nodemanager
     restart: always
+    volumes:
+      - ./data/nameapp:/app
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
